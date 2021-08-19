@@ -9,11 +9,11 @@ body{
     padding: 0;
     font-family: "barlow semi condensed";
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(5, fit-content(100%));
     justify-items: center;
     align-items: center;
     margin-top: 60px;
-   
+    background-color: hsl(210, 46%, 95%);
    
 }
 
@@ -35,11 +35,13 @@ img{
 .verified {
     font-size: 13px;
     opacity: 50%;
+    
 }
 
 p {
     opacity: 70%;
     font-size: 13px;
+    
 }
 
 h3{
@@ -57,22 +59,133 @@ h3{
     background-color: hsl(263, 55%, 52%);
     border-radius: 5px;
     color: white;
-    padding: 30px;
+    padding: 10px 30px 30px 30px;
     position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
 
     img{  
-        border: 2px inset white;
+        border: 2px solid hsl(263, 55%, 70%);
     }
 
     &::before{
         content: url(images/bg-pattern-quotation.svg);
         position: absolute;
         top: 0;
-        right: 25px ;
+        right: 25px;
+         z-index: -1;    
+
+    }   
+    
+}
+
+.col2{
+    width: 310px;
+    background-color: hsl(217, 19%, 35%);
+    border-radius: 5px;
+    color: white;
+    padding: 10px 30px 30px 30px;
+    margin-bottom: 30px;
+
+    img{  
+        border: 2px solid white;
+    }
+}
+
+.col3{
+    width: 310px;
+    background-color: white;
+    border-radius: 5px;
+    color: hsl(217, 19%, 35%);
+    padding: 10px 30px 30px 30px;
+    margin-bottom: 30px;
+}
+
+.col4{
+    width: 310px;
+    background-color: hsl(219, 29%, 14%);
+    border-radius: 5px;
+    color: white;
+    padding: 10px 30px 30px 30px;
+    margin-bottom: 30px;
+
+    img{  
+        border: 2px solid hsl(263, 55%, 52%);
+    }
+}
+
+.col5{
+    width: 310px;
+    background-color: white;
+    border-radius: 5px;
+    color: hsl(217, 19%, 35%);
+    padding: 10px 30px 30px 30px;
+    margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 1400px) {
+    body{
+        grid-template-columns: repeat(3, fit-content(100%));
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        place-items: stretch;
+        margin: 0;
+        gap: 20px;
+    }
+
+    h3{
+        font-size: 25px;
+    }
+
+    p{
+        font-size: 18px;
+    }
+
+    .col1{
+        grid-area: 1/ 1/ 2/ 3;
+        margin: 0;
+        width: 600px;
+
+        
+        &::before{
+            right: 70px;
+              
+    
+        }   
+    }
+    
+    .col2{
+        grid-area: 1/ 3/ 2/ 4;
+        margin: 0;
+       
 
     }
 
-    
+    .col3 {
+        grid-area: 2/ 1/ 3/ 2;
+        margin: 0;
+        padding: 20px;
+
         
-    
+
+        // h3{
+        //     margin-bottom: 40px;
+        // }
+       
+    }
+
+    .col4 {
+        grid-area: 2/ 2/ 3/ 4 ;
+        margin: 0;
+        width: 600px;
+        .verified{
+            opacity: 50%;
+        }
+    }
+
+    .col5{
+        grid-area: 1/ 4/ 3/ 5 ;
+        margin: 0;
+        
+    }
 }
